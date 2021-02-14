@@ -1,0 +1,19 @@
+pip install SpeechRecognition
+
+conda install pyaudio
+
+# If in case you want to display text in the language spoken, we have to introduce a very minor change 
+
+#TAKING MY NATIVE LANUAGE AS AN EXAMPLE (TELUGU)
+
+import speech_recognition as sr
+r=sr.Recognizer()
+with sr.Microphone() as source:
+    print("Say Something")
+    audio=r.listen(source)
+    print("Sorry,Time Over")
+    
+try:
+    print("DID YOU SAY:"+r.recognize_google(audio,language='Te-IN'));
+except:
+    pass;
